@@ -1,24 +1,24 @@
-from flask import Flask, render_template
+from flask import Flask, json
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def homepage():
-    return {
-        render_template("homepage.html"),
-    }
+    return ({
+        json("homepage.html"),
+    })
 
 @app.route("/contatos")
 def contatos():
-    return { 
-        render_template("contatos.html"),
-    }
+    return ({ 
+        json("contatos.html"),
+    })
 
 @app.route("/usuarios/<nome_usuario>")
 def usuarios(nome_usuario):
-    return {
-        render_template("usuarios.html", nome_usuario=nome_usuario),
-            }
+    return ({
+        json("usuarios.html", nome_usuario=nome_usuario),
+    })
 
 
 
