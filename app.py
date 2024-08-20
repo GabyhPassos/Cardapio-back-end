@@ -1,24 +1,19 @@
-from flask import Flask, json
+import json
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def homepage():
-    return ({
-        json("homepage.html"),
-    })
+    return jsonify("homepage.html")
 
 @app.route("/contatos")
 def contatos():
-    return ({ 
-        json("contatos.html"),
-    })
+    return jsonify("contatos.html")
 
 @app.route("/usuarios/<nome_usuario>")
 def usuarios(nome_usuario):
-    return ({
-        json("usuarios.html", nome_usuario=nome_usuario),
-    })
+    return jsonify("usuarios.html", nome_usuario=nome_usuario)
 
 
 
