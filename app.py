@@ -1,20 +1,14 @@
-import json
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, Blueprint
+from api.menus.menus_bp import menus_bp
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def homepage():
-    return jsonify("homepage.html")
+    return jsonify({"message": "Hello World"})
 
-@app.route("/contatos")
-def contatos():
-    return jsonify("contatos.html")
-
-@app.route("/usuarios/<nome_usuario>")
-def usuarios(nome_usuario):
-    return jsonify("usuarios.html", nome_usuario=nome_usuario)
-
+# define and call blueprints
+app.register_blueprint(menus_bp, url_prefix='/api/menus')
 
 
 if __name__ == "__main__":
