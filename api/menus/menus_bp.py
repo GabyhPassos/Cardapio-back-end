@@ -9,4 +9,17 @@ def index():
 
 @menus_bp.get('/menus')
 def items_menu():
-    return jsonify({"content": "['Pizzas', 'Esfihas']"})
+    return jsonify({"content": "['Brigadeiro', 'Cookies']"})
+
+@menus_bp.route('/', methods=['POST'])
+def inserir_menus_bp():
+    pass
+
+@menus_bp.route('/<int:menus_bp_id>/update', methods = ['PUT'])
+def atualizar_menus_bp(menus_bp_id):
+    pass
+
+@menus_bp.route('/<int:menus_bp_id>/delete', methods = ['DELETE'])
+def deletar_menus_bp(menus_bp_id):
+    pass
+
