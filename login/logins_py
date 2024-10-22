@@ -15,6 +15,12 @@ def items_login():
 def inserir_login():
     pass
 
+    data = request.get_json()  # Recupera os dados JSON da requisição
+    return jsonify(data)  # Retorna os dados como resposta
+
+if __name__ == '__main__':
+    app.run(debug=True)  
+
 @login.route('/<int:login_id>/update', methods = ['PUT'])
 def atualizar_login(login_id):
     pass
@@ -23,3 +29,7 @@ def atualizar_login(login_id):
 def deletar_login(login_id):
     pass
 
+<<<<<<< HEAD
+=======
+print(data)
+>>>>>>> 9108be641d68105f06f19528bd88a759c4d3919a

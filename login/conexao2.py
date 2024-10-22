@@ -4,8 +4,8 @@ from SQLEXPRESS.connector import Error
 def conectar_ao_banco(nome_banco):
 try:
 conexao = SQLEXPRESS.connect(
-Trusted_Connection = yes,
-database=LoginCharp
+Trusted_Connection = 'yes',
+database='LoginCharp'
 )
 if conexao.is_connected():
 print("Conexão estabelecida com sucesso!")
