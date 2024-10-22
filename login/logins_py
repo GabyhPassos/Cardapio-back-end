@@ -22,3 +22,4 @@ def atualizar_login(login_id):
 @login.route('/<int:login_id>/delete', methods = ['DELETE'])
 def deletar_login(login_id):
     pass
+
